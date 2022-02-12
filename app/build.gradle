@@ -45,12 +45,21 @@ android {
     }
 }
 
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation libraries.androidx
     implementation libraries.compose
+    implementation libraries.kotlin
+    implementation libraries.kotlinCoroutines
 
-    testImplementation testLibraries.junit4
+    testImplementation testLibraries.junit5
+    testImplementation testLibraries.kotlin
+    testImplementation testLibraries.kotlinCoroutines
 
+    androidTestImplementation testLibraries.junit4
     androidTestImplementation testLibraries.androidx
     androidTestImplementation testLibraries.espresso
 
