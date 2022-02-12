@@ -1,4 +1,5 @@
 pluginManagement {
+    apply from: './dependencies.gradle'
     repositories {
         gradlePluginPortal()
         google()
@@ -6,6 +7,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
+    apply from: './dependencies.gradle'
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
