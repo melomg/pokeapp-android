@@ -4,6 +4,7 @@ ext {
     target_sdk_version = 31
 
     compose_version = '1.1.0'
+    compose_material3_version = '1.0.0-alpha02'
     kotlin_version = '1.6.10'
     kotlin_coroutines_version = '1.5.2'
 
@@ -25,7 +26,7 @@ ext {
             ],
             compose         : [
                     "androidx.compose.ui:ui:$compose_version",
-                    "androidx.compose.material:material:$compose_version",
+                    "androidx.compose.material3:material3:$compose_material3_version",
                     "androidx.compose.ui:ui-tooling-preview:$compose_version"
             ],
             kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
@@ -40,7 +41,10 @@ ext {
                     "androidx.compose.ui:ui-test-junit4:$compose_version"
             ],
             espresso        : "androidx.test.espresso:espresso-core:$espresso_core_version",
-            composeTooling  : "androidx.compose.ui:ui-tooling:$compose_version",
+            composeTooling  : [
+                    "androidx.compose.ui:ui-tooling:$compose_version",
+                    "androidx.compose.ui:ui-test-manifest:$compose_version"
+            ],
             junit4          : "junit:junit:$junit4_version",
             junit5          : [
                     "org.junit.jupiter:junit-jupiter-params:$junit_jupiter_version",

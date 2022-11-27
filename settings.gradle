@@ -14,5 +14,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Graphql Starwars App"
+rootProject.name = "SWapp"
 include ':app'

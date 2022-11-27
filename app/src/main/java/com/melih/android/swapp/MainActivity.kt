@@ -1,26 +1,26 @@
-package com.melih.android.graphqlstarwarsapp
+package com.melih.android.swapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.melih.android.graphqlstarwarsapp.ui.theme.GraphqlStarwarsAppTheme
+import com.melih.android.swapp.ui.theme.SWappTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GraphqlStarwarsAppTheme {
+            SWappTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
+                    color = MaterialTheme.colorScheme.background,
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
                 ) {
                     Greeting("Android")
                 }
@@ -37,7 +37,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    GraphqlStarwarsAppTheme {
+    SWappTheme {
         Greeting("Android")
     }
 }

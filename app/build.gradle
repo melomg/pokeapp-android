@@ -4,10 +4,11 @@ plugins {
 }
 
 android {
+    namespace 'com.melih.android.swapp'
     compileSdk compile_sdk_version
 
     defaultConfig {
-        applicationId "com.melih.android.graphqlstarwarsapp"
+        applicationId "com.melih.android.swapp"
         minSdk min_sdk_version
         targetSdk target_sdk_version
         versionCode 1
