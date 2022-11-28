@@ -1,13 +1,12 @@
 pluginManagement {
-    apply from: './dependencies.gradle'
+    includeBuild("build-logic")
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 dependencyResolutionManagement {
-    apply from: './dependencies.gradle'
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
@@ -15,4 +14,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "SWapp"
-include ':app'
+include(":app")
