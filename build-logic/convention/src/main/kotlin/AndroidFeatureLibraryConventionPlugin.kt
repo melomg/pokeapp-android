@@ -1,4 +1,5 @@
 import com.android.build.gradle.LibraryExtension
+import com.melih.apps.swapp.SdkVersions
 import com.melih.apps.swapp.configureAndroidFeature
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -14,7 +15,7 @@ class AndroidFeatureLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureAndroidFeature(this)
-                defaultConfig.targetSdk = 33
+                defaultConfig.targetSdk = SdkVersions.targetSdkVersion
             }
         }
     }

@@ -1,4 +1,5 @@
 import com.android.build.gradle.LibraryExtension
+import com.melih.apps.swapp.SdkVersions
 import com.melih.apps.swapp.configureAndroidKotlin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -14,7 +15,7 @@ class AndroidKotlinLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureAndroidKotlin(this)
-                defaultConfig.targetSdk = 33
+                defaultConfig.targetSdk = SdkVersions.targetSdkVersion
             }
         }
     }
