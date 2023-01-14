@@ -1,6 +1,6 @@
 import com.android.build.gradle.LibraryExtension
-import com.melih.apps.swapp.SdkVersions
-import com.melih.apps.swapp.configureAndroidFeature
+import com.melih.apps.pokeapp.SdkVersions
+import com.melih.apps.pokeapp.configureAndroidFeature
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

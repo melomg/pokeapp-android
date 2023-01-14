@@ -1,4 +1,4 @@
-package com.melih.android.swapp
+package com.melih.android.pokeapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,13 +10,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.melih.android.swapp.ui.theme.SWappTheme
+import com.melih.android.pokeapp.ui.theme.PokeAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            SWappTheme {
+            PokeAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     color = MaterialTheme.colorScheme.background,
@@ -37,7 +37,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    SWappTheme {
+    PokeAppTheme {
         Greeting("Android")
     }
 }

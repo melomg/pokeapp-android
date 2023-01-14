@@ -1,4 +1,4 @@
-package com.melih.apps.swapp
+package com.melih.apps.pokeapp
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.Project

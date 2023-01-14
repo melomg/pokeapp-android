@@ -1,4 +1,4 @@
-package com.melih.android.swapp.ui.theme
+package com.melih.android.pokeapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

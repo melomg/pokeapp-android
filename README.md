@@ -1,2 +1,2 @@
-# graphql-starwars-android
-Playground app for graphql
+# Poke-app android 
+Playground app for poke api

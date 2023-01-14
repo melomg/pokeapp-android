@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "SWapp"
+rootProject.name = "PokeApp"
 include(":app")

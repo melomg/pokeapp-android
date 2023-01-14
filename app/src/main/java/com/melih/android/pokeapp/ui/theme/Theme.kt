@@ -1,4 +1,4 @@
-package com.melih.android.swapp.ui.theme
+package com.melih.android.pokeapp.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
+import com.melih.android.pokeapp.ui.theme.*
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -38,7 +39,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun SWappTheme(
+fun PokeAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

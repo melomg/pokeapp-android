@@ -2,7 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.melih.android.swapp.buildlogic"
+group = "com.melih.android.pokeapp.buildlogic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -17,15 +17,15 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = "swapp.android.application"
+            id = "pokeapp.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidFeatureLibrary") {
-            id = "swapp.android.library.feature"
+            id = "pokeapp.android.library.feature"
             implementationClass = "AndroidFeatureLibraryConventionPlugin"
         }
         register("androidKotlinLibrary") {
-            id = "swapp.android.library.kotlin"
+            id = "pokeapp.android.library.kotlin"
             implementationClass = "AndroidKotlinLibraryConventionPlugin"
         }
     }

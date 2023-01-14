@@ -1,4 +1,4 @@
-package com.melih.android.swapp.ui.theme
+package com.melih.android.pokeapp.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

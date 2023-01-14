@@ -1,4 +1,4 @@
-package com.melih.apps.swapp
+package com.melih.apps.pokeapp
 
 object SdkVersions {
     const val compileSdkVersion: Int = 33

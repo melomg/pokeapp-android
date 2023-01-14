@@ -1,11 +1,11 @@
 plugins {
-    id("swapp.android.application")
+    id("pokeapp.android.application")
 }
 
 android {
-    namespace = "com.melih.android.swapp"
+    namespace = "com.melih.android.pokeapp"
     defaultConfig {
-        applicationId = "com.melih.android.swapp"
+        applicationId = "com.melih.android.pokeapp"
         versionCode = 1
         versionName = "1.0.0"
 
