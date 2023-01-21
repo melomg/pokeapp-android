@@ -14,4 +14,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "PokeApp"
+
 include(":app")
+include(":core:designsystem")

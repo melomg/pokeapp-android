@@ -4,6 +4,7 @@ import com.melih.apps.pokeapp.configureAndroidFeature
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -16,6 +17,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             extensions.configure<ApplicationExtension> {
                 configureAndroidFeature(this)
                 defaultConfig.targetSdk = SdkVersions.targetSdkVersion
+            }
+
+            dependencies {
+                add("implementation", project(":core:designsystem"))
             }
         }
     }
