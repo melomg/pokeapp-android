@@ -24,12 +24,16 @@ internal fun Project.configureAndroidCompose(
         dependencies {
             val bom = libs.findLibrary("androidx-compose-bom").get()
             val composeBundle = libs.findBundle("compose").get()
+            val composeUITest = libs.findLibrary("androidx-compose-ui-test").get()
+            val composeUIManifest = libs.findLibrary("androidx-compose-ui-manifest").get()
             val composeUITooling = libs.findLibrary("androidx-compose-ui-tooling").get()
 
             add("implementation", platform(bom))
             add("androidTestImplementation", platform(bom))
+            add("androidTestImplementation", composeUITest)
 
             add("implementation", composeBundle)
+            add("debugImplementation", composeUIManifest)
             add("debugImplementation", composeUITooling)
         }
     }
