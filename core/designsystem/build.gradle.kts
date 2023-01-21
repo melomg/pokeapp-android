@@ -8,3 +8,7 @@ android {
     }
     namespace = "com.melih.android.pokeapp.core.designsystem"
 }
+
+dependencies {
+    implementation(libs.google.accompanist.systemuicontroller)
+}

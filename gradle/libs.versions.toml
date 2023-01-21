@@ -13,6 +13,7 @@ androidxCore = '1.9.0'
 androidxAppCompat = "1.5.1"
 androidxActivityCompose = '1.6.1'
 androidxLifecycle = '2.6.0-alpha03'
+googleAccompanist = '0.29.0-alpha'
 
 androidxEspresso = '3.4.0'
 androidxTestCore = "1.5.0"
@@ -41,6 +42,7 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+google-accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "googleAccompanist" }
 
 # Kotlin dependencies
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
