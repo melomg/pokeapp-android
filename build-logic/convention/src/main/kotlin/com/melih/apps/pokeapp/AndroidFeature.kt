@@ -21,6 +21,7 @@ internal fun Project.configureAndroidFeature(
         val androidxTest = libs.findBundle("android-test").get()
 
         add("implementation", project(":core:designsystem"))
+        add("implementation", project(":core:l10n"))
         add("implementation", androidx)
 
         add("androidTestImplementation", androidxTest)

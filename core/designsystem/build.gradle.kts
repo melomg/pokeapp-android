@@ -1,5 +1,5 @@
 plugins {
-    id("pokeapp.android.library.feature")
+    id("pokeapp.android.core")
 }
 
 android {
