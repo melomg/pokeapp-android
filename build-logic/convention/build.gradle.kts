@@ -20,6 +20,10 @@ gradlePlugin {
             id = "pokeapp.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        register("androidCore") {
+            id = "pokeapp.android.core"
+            implementationClass = "AndroidCoreConventionPlugin"
+        }
         register("androidFeatureLibrary") {
             id = "pokeapp.android.library.feature"
             implementationClass = "AndroidFeatureLibraryConventionPlugin"

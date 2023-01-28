@@ -1,20 +1,25 @@
-import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.gradle.LibraryExtension
 import com.melih.apps.pokeapp.SdkVersions
-import com.melih.apps.pokeapp.configureAndroidFeature
+import com.melih.apps.pokeapp.configureAndroidCompose
+import com.melih.apps.pokeapp.configureAndroidKotlin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
-class AndroidApplicationConventionPlugin : Plugin<Project> {
+class AndroidCoreConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.android.application")
+                apply("com.android.library")
                 apply("org.jetbrains.kotlin.android")
             }
 
-            extensions.configure<ApplicationExtension> {
-                configureAndroidFeature(this)
+            extensions.configure<LibraryExtension> {
+
+                configureAndroidKotlin(this)
+
+                configureAndroidCompose(this)
+
                 defaultConfig.targetSdk = SdkVersions.targetSdkVersion
             }
         }

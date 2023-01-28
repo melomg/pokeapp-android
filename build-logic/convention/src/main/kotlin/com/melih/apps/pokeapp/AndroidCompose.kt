@@ -5,6 +5,7 @@ import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.kotlin
 
 internal fun Project.configureAndroidCompose(
     commonExtension: CommonExtension<*, *, *, *>,
@@ -22,12 +23,15 @@ internal fun Project.configureAndroidCompose(
         }
 
         dependencies {
+            val androidx = libs.findBundle("androidx").get()
+            val androidxTest = libs.findBundle("android-test").get()
             val bom = libs.findLibrary("androidx-compose-bom").get()
             val composeBundle = libs.findBundle("compose").get()
             val composeUITest = libs.findLibrary("androidx-compose-ui-test").get()
             val composeUIManifest = libs.findLibrary("androidx-compose-ui-manifest").get()
             val composeUITooling = libs.findLibrary("androidx-compose-ui-tooling").get()
 
+            add("implementation", androidx)
             add("implementation", platform(bom))
             add("androidTestImplementation", platform(bom))
             add("androidTestImplementation", composeUITest)
@@ -35,6 +39,9 @@ internal fun Project.configureAndroidCompose(
             add("implementation", composeBundle)
             add("debugImplementation", composeUIManifest)
             add("debugImplementation", composeUITooling)
+
+            add("androidTestImplementation", androidxTest)
+            add("androidTestImplementation", kotlin("test"))
         }
     }
 }
