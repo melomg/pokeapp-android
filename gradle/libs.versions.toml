@@ -13,6 +13,7 @@ androidxCore = '1.9.0'
 androidxAppCompat = "1.5.1"
 androidxActivityCompose = '1.6.1'
 androidxLifecycle = '2.6.0-alpha03'
+androidxNavigation = '2.5.3'
 googleAccompanist = '0.29.0-alpha'
 
 androidxEspresso = '3.4.0'
@@ -32,6 +33,10 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivityCompose" }
 androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
 androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
+androidx-navigation-common-ktx = { group = "androidx.navigation", name = "navigation-common-ktx", version.ref = "androidxNavigation" }
+androidx-navigation-runtime = { group = "androidx.navigation", name = "navigation-runtime", version.ref = "androidxNavigation" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
+androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxNavigation" }
 
 # Compose dependencies
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
@@ -83,8 +88,13 @@ androidx = [
     "androidx-core-ktx",
     "androidx-appcompat",
     "androidx-activity-compose",
+    "androidx-navigation-compose",
     "androidx-lifecycle-runtimeCompose",
     "androidx-lifecycle-viewModelCompose"
+]
+navigation-core = [
+    "androidx-navigation-common-ktx",
+    "androidx-navigation-runtime",
 ]
 compose = [
     "androidx-compose-foundation",
@@ -102,6 +112,7 @@ android-test = [
     "androidx-test-rules",
     "androidx-test-runner",
     "androidx-test-uiautomator",
+    "androidx-navigation-testing",
     "junit4"
 ]
 unit-test = [
