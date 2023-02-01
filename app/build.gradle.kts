@@ -37,4 +37,5 @@ android {
 
 dependencies {
     implementation(project(":settings:api"))
+    implementation(project(":favourites:api"))
 }
