@@ -9,14 +9,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import com.melih.android.pokeapp.favourites.api.favouritesRoute
 import com.melih.android.pokeapp.favourites.api.navigateToFavourites
 import com.melih.android.pokeapp.navigation.TopLevelDestination
 import com.melih.android.pokeapp.navigation.TopLevelDestination.FAVOURITES
 import com.melih.android.pokeapp.navigation.TopLevelDestination.POKEMONS
 import com.melih.android.pokeapp.navigation.TopLevelDestination.SETTINGS
+import com.melih.android.pokeapp.pokemons.api.navigateToPokemons
 import com.melih.android.pokeapp.settings.api.router.navigateToSettings
-import com.melih.android.pokeapp.settings.api.router.settingsRoute
 
 @Composable
 internal fun rememberPokeAppState(
@@ -32,14 +31,6 @@ internal class PokeAppState(
     val currentDestination: NavDestination?
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
-
-    val currentTopLevelDestination: TopLevelDestination?
-        @Composable get() = when (currentDestination?.route) {
-            // todo pokemonsRoute -> POKEMONS
-            favouritesRoute -> FAVOURITES
-            settingsRoute -> SETTINGS
-            else -> null
-        }
 
     val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.values().asList()
 
@@ -60,7 +51,7 @@ internal class PokeAppState(
 
         when (topLevelDestination) {
             POKEMONS -> {
-                //todo navController.navigateToPokemons(topLevelNavOptions)
+                navController.navigateToPokemons(topLevelNavOptions)
             }
             FAVOURITES -> {
                 navController.navigateToFavourites(topLevelNavOptions)
