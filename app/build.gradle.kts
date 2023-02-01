@@ -34,3 +34,7 @@ android {
         }
     }
 }
+
+dependencies {
+    implementation(project(":settings:api"))
+}

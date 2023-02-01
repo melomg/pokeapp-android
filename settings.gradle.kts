@@ -18,3 +18,5 @@ rootProject.name = "PokeApp"
 include(":app")
 include(":core:designsystem")
 include(":core:l10n")
+include(":settings:implementation")
+include(":settings:api")
