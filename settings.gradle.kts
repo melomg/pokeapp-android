@@ -16,7 +16,13 @@ dependencyResolutionManagement {
 rootProject.name = "PokeApp"
 
 include(":app")
+// Core
 include(":core:designsystem")
 include(":core:l10n")
-include(":settings:implementation")
+// Features
+include(":favourites:api")
+include(":favourites:implementation")
+include(":pokemons:api")
+include(":pokemons:implementation")
 include(":settings:api")
+include(":settings:implementation")
