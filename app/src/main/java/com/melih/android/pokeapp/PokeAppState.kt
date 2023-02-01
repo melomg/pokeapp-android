@@ -13,6 +13,8 @@ import com.melih.android.pokeapp.navigation.TopLevelDestination
 import com.melih.android.pokeapp.navigation.TopLevelDestination.FAVOURITES
 import com.melih.android.pokeapp.navigation.TopLevelDestination.POKEMONS
 import com.melih.android.pokeapp.navigation.TopLevelDestination.SETTINGS
+import com.melih.android.pokeapp.settings.api.router.navigateToSettings
+import com.melih.android.pokeapp.settings.api.router.settingsRoute
 
 @Composable
 internal fun rememberPokeAppState(
@@ -33,7 +35,7 @@ internal class PokeAppState(
         @Composable get() = when (currentDestination?.route) {
             // todo pokemonsRoute -> POKEMONS
             // todo favouritesRoute -> FAVOURITES
-            // todo settingsRoute -> SETTINGS
+            settingsRoute -> SETTINGS
             else -> null
         }
 
@@ -62,7 +64,7 @@ internal class PokeAppState(
                 //todo navController.navigateToFavourites(topLevelNavOptions)
             }
             SETTINGS -> {
-                //todo navController.navigateToSettings(topLevelNavOptions)
+                navController.navigateToSettings(topLevelNavOptions)
             }
         }
     }
