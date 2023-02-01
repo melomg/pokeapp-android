@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":settings:api"))
     implementation(project(":favourites:api"))
+    implementation(project(":pokemons:api"))
+    implementation(project(":settings:api"))
 }
