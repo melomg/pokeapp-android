@@ -3,8 +3,10 @@ package com.melih.apps.pokeapp
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.provideDelegate
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
@@ -12,6 +14,8 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 internal fun Project.configureAndroidKotlin(
     commonExtension: CommonExtension<*, *, *, *>,
 ) {
+    val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
     commonExtension.apply {
         compileSdk = SdkVersions.compileSdkVersion
 
@@ -43,6 +47,9 @@ internal fun Project.configureAndroidKotlin(
     }
 
     dependencies {
+        add("implementation", libs.findLibrary("dagger-hilt-core").get())
+        add("kapt", libs.findLibrary("dagger-hilt-compiler").get())
+
         add("testImplementation", kotlin("test"))
     }
 }

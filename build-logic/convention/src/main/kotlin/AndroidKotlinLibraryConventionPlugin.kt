@@ -9,8 +9,9 @@ class AndroidKotlinLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.android.library")
+                apply("com.android.library")// fixme use org.jetbrains.kotlin.jvm
                 apply("org.jetbrains.kotlin.android")
+                apply("kotlin-kapt")
             }
 
             extensions.configure<LibraryExtension> {
