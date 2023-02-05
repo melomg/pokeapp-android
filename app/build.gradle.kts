@@ -41,9 +41,9 @@ hilt {
 
 dependencies {
     implementation(project(":favourites:api"))
-    implementation(project(":favourites:implementation"))
+    implementation(project(":favourites:impl"))
     implementation(project(":pokemons:api"))
-    implementation(project(":pokemons:implementation"))
+    implementation(project(":pokemons:impl"))
     implementation(project(":settings:api"))
-    implementation(project(":settings:implementation"))
+    implementation(project(":settings:impl"))
 }
