@@ -1,9 +1,9 @@
-package com.melih.android.pokeapp.favourites.implementation.router.di
+package com.melih.android.pokeapp.favourites.impl.router.di
 
 import com.melih.android.pokeapp.core.navigation.NavigationRouter
 import com.melih.android.pokeapp.core.navigation.di.ScreenRouterKey
 import com.melih.android.pokeapp.favourites.api.router.FavouritesRouter
-import com.melih.android.pokeapp.favourites.implementation.router.DefaultFavouritesRouter
+import com.melih.android.pokeapp.favourites.impl.router.DefaultFavouritesRouter
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

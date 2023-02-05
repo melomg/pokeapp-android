@@ -1,4 +1,4 @@
-package com.melih.android.pokeapp.favourites.implementation.router
+package com.melih.android.pokeapp.favourites.impl.router
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.favourites.api.router.FavouritesRouter
-import com.melih.android.pokeapp.favourites.implementation.FavouritesScreen
+import com.melih.android.pokeapp.favourites.impl.FavouritesScreen
 import javax.inject.Inject
 
 internal class DefaultFavouritesRouter @Inject constructor() : FavouritesRouter() {

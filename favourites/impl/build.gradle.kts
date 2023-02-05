@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.melih.android.pokeapp.favourites.implementation"
+    namespace = "com.melih.android.pokeapp.favourites.impl"
 }
 
 dependencies {

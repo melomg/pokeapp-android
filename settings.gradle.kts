@@ -22,7 +22,7 @@ include(":core:l10n")
 include(":core:navigation")
 // Features
 include(":favourites:api")
-include(":favourites:implementation")
+include(":favourites:impl")
 include(":pokemons:api")
 include(":pokemons:impl")
 include(":settings:api")
