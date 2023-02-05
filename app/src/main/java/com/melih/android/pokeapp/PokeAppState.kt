@@ -59,16 +59,10 @@ internal class PokeAppState(
                 )
             }
             FAVOURITES -> {
-                navController.navigate(
-                    route = routers.find<PokemonsRouter>().routeName,
-                    navOptions = topLevelNavOptions
-                )
+                // todo navigate to favourites
             }
             SETTINGS -> {
-                navController.navigate(
-                    route = routers.find<PokemonsRouter>().routeName,
-                    navOptions = topLevelNavOptions,
-                )
+                // todo navigate to settings
             }
         }
     }
