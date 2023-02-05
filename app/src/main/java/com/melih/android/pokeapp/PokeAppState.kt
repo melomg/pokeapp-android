@@ -17,6 +17,7 @@ import com.melih.android.pokeapp.navigation.TopLevelDestination.FAVOURITES
 import com.melih.android.pokeapp.navigation.TopLevelDestination.POKEMONS
 import com.melih.android.pokeapp.navigation.TopLevelDestination.SETTINGS
 import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
+import com.melih.android.pokeapp.settings.api.router.SettingsRouter
 
 @Composable
 internal fun rememberPokeAppState(
@@ -66,7 +67,10 @@ internal class PokeAppState(
                 )
             }
             SETTINGS -> {
-                // todo navigate to settings
+                navController.navigate(
+                    route = routers.find<SettingsRouter>().routeName,
+                    navOptions = topLevelNavOptions
+                )
             }
         }
     }
