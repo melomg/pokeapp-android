@@ -11,11 +11,12 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.core.navigation.find
-import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
+import com.melih.android.pokeapp.favourites.api.router.FavouritesRouter
 import com.melih.android.pokeapp.navigation.TopLevelDestination
 import com.melih.android.pokeapp.navigation.TopLevelDestination.FAVOURITES
 import com.melih.android.pokeapp.navigation.TopLevelDestination.POKEMONS
 import com.melih.android.pokeapp.navigation.TopLevelDestination.SETTINGS
+import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
 
 @Composable
 internal fun rememberPokeAppState(
@@ -59,7 +60,10 @@ internal class PokeAppState(
                 )
             }
             FAVOURITES -> {
-                // todo navigate to favourites
+                navController.navigate(
+                    route = routers.find<FavouritesRouter>().routeName,
+                    navOptions = topLevelNavOptions
+                )
             }
             SETTINGS -> {
                 // todo navigate to settings
