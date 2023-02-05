@@ -1,4 +1,4 @@
-package com.melih.android.pokeapp.settings.impl
+package com.melih.android.pokeapp.settings.impl.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Text

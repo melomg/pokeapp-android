@@ -7,7 +7,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.settings.api.router.SettingsRouter
-import com.melih.android.pokeapp.settings.impl.SettingsScreen
+import com.melih.android.pokeapp.settings.impl.ui.SettingsScreen
 import javax.inject.Inject
 
 internal class DefaultSettingsRouter @Inject constructor() : SettingsRouter() {

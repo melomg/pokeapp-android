@@ -1,4 +1,4 @@
-package com.melih.android.pokeapp.pokemons.impl
+package com.melih.android.pokeapp.favourites.impl.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Text
@@ -7,13 +7,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun PokemonsScreen(
+fun FavouritesScreen(
     modifier: Modifier = Modifier,
 ) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier,
     ) {
-        Text(text = "Pokemons")
+        Text(text = "Favourites")
     }
 }

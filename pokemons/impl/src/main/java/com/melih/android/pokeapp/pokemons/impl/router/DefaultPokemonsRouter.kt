@@ -7,7 +7,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
-import com.melih.android.pokeapp.pokemons.impl.PokemonsScreen
+import com.melih.android.pokeapp.pokemons.impl.ui.PokemonsScreen
 import javax.inject.Inject
 
 internal class DefaultPokemonsRouter @Inject constructor() : PokemonsRouter() {

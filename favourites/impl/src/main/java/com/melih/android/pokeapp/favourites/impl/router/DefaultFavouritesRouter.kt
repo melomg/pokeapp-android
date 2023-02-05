@@ -7,7 +7,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.favourites.api.router.FavouritesRouter
-import com.melih.android.pokeapp.favourites.impl.FavouritesScreen
+import com.melih.android.pokeapp.favourites.impl.ui.FavouritesScreen
 import javax.inject.Inject
 
 internal class DefaultFavouritesRouter @Inject constructor() : FavouritesRouter() {
