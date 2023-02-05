@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.melih.android.pokeapp.settings.implementation"
+    namespace = "com.melih.android.pokeapp.settings.impl"
 }
 
 dependencies {

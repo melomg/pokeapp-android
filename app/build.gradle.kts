@@ -45,5 +45,5 @@ dependencies {
     implementation(project(":pokemons:api"))
     implementation(project(":pokemons:impl"))
     implementation(project(":settings:api"))
-    implementation(project(":settings:implementation"))
+    implementation(project(":settings:impl"))
 }

@@ -1,9 +1,9 @@
-package com.melih.android.pokeapp.settings.implementation.router.di
+package com.melih.android.pokeapp.settings.impl.router.di
 
 import com.melih.android.pokeapp.core.navigation.NavigationRouter
 import com.melih.android.pokeapp.core.navigation.di.ScreenRouterKey
 import com.melih.android.pokeapp.settings.api.router.SettingsRouter
-import com.melih.android.pokeapp.settings.implementation.router.DefaultSettingsRouter
+import com.melih.android.pokeapp.settings.impl.router.DefaultSettingsRouter
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

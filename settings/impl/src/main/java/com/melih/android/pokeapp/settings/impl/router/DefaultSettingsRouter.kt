@@ -1,4 +1,4 @@
-package com.melih.android.pokeapp.settings.implementation.router
+package com.melih.android.pokeapp.settings.impl.router
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.settings.api.router.SettingsRouter
-import com.melih.android.pokeapp.settings.implementation.SettingsScreen
+import com.melih.android.pokeapp.settings.impl.SettingsScreen
 import javax.inject.Inject
 
 internal class DefaultSettingsRouter @Inject constructor() : SettingsRouter() {
