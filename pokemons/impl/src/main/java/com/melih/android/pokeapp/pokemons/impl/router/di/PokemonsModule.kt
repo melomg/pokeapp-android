@@ -1,8 +1,8 @@
-package com.melih.android.pokeapp.pokemons.implementation.router.di
+package com.melih.android.pokeapp.pokemons.impl.router.di
 
 import com.melih.android.pokeapp.core.navigation.NavigationRouter
 import com.melih.android.pokeapp.core.navigation.di.ScreenRouterKey
-import com.melih.android.pokeapp.pokemons.implementation.router.DefaultPokemonsRouter
+import com.melih.android.pokeapp.pokemons.impl.router.DefaultPokemonsRouter
 import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
 import dagger.Binds
 import dagger.Module

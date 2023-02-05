@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.melih.android.pokeapp.pokemons.implementation"
+    namespace = "com.melih.android.pokeapp.pokemons.impl"
 }
 
 dependencies {
