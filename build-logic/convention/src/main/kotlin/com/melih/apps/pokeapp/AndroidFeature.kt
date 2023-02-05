@@ -24,6 +24,8 @@ internal fun Project.configureAndroidFeature(
         add("implementation", project(":core:l10n"))
         add("implementation", androidx)
 
+        add("implementation", libs.findLibrary("dagger-hilt-android").get())
+
         add("androidTestImplementation", androidxTest)
         add("androidTestImplementation", kotlin("test"))
     }

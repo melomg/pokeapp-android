@@ -11,6 +11,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
+                apply("dagger.hilt.android.plugin")
+                apply("kotlin-kapt")
             }
 
             extensions.configure<ApplicationExtension> {

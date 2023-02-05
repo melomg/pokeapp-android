@@ -16,6 +16,8 @@ androidxLifecycle = '2.6.0-alpha03'
 androidxNavigation = '2.5.3'
 googleAccompanist = '0.29.0-alpha'
 
+dagger = '2.42'
+
 androidxEspresso = '3.4.0'
 androidxTestCore = "1.5.0"
 androidxTestExt = "1.1.4"
@@ -53,6 +55,12 @@ google-accompanist-systemuicontroller = { group = "com.google.accompanist", name
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+
+# Dagger dependencies
+dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
+dagger-hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "dagger" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger" }
+dagger-hilt-test = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
 
 # Test dependencies
 androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
@@ -130,3 +138,4 @@ unit-test = [
 android-application = { id = "com.android.application", version.ref = "gradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "gradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
