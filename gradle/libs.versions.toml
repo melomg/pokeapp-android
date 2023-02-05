@@ -100,10 +100,6 @@ androidx = [
     "androidx-lifecycle-runtimeCompose",
     "androidx-lifecycle-viewModelCompose"
 ]
-navigation-core = [
-    "androidx-navigation-common-ktx",
-    "androidx-navigation-runtime",
-]
 compose = [
     "androidx-compose-foundation",
     "androidx-compose-foundation-layout",

@@ -9,23 +9,25 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import com.melih.android.pokeapp.favourites.api.navigateToFavourites
+import com.melih.android.pokeapp.core.navigation.Routers
+import com.melih.android.pokeapp.core.navigation.find
+import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
 import com.melih.android.pokeapp.navigation.TopLevelDestination
 import com.melih.android.pokeapp.navigation.TopLevelDestination.FAVOURITES
 import com.melih.android.pokeapp.navigation.TopLevelDestination.POKEMONS
 import com.melih.android.pokeapp.navigation.TopLevelDestination.SETTINGS
-import com.melih.android.pokeapp.pokemons.api.navigateToPokemons
-import com.melih.android.pokeapp.settings.api.router.navigateToSettings
 
 @Composable
 internal fun rememberPokeAppState(
+    routers: Routers,
     navController: NavHostController = rememberNavController()
 ): PokeAppState = remember(navController) {
-    PokeAppState(navController)
+    PokeAppState(routers, navController)
 }
 
 @Stable
 internal class PokeAppState(
+    private val routers: Routers,
     val navController: NavHostController,
 ) {
     val currentDestination: NavDestination?
@@ -51,13 +53,22 @@ internal class PokeAppState(
 
         when (topLevelDestination) {
             POKEMONS -> {
-                navController.navigateToPokemons(topLevelNavOptions)
+                navController.navigate(
+                    route = routers.find<PokemonsRouter>().routeName,
+                    navOptions = topLevelNavOptions
+                )
             }
             FAVOURITES -> {
-                navController.navigateToFavourites(topLevelNavOptions)
+                navController.navigate(
+                    route = routers.find<PokemonsRouter>().routeName,
+                    navOptions = topLevelNavOptions
+                )
             }
             SETTINGS -> {
-                navController.navigateToSettings(topLevelNavOptions)
+                navController.navigate(
+                    route = routers.find<PokemonsRouter>().routeName,
+                    navOptions = topLevelNavOptions,
+                )
             }
         }
     }

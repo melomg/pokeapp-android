@@ -5,3 +5,7 @@ plugins {
 android {
     namespace = "com.melih.android.pokeapp.favourites.implementation"
 }
+
+dependencies {
+    implementation(project(":favourites:api"))
+}
