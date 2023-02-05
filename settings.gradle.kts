@@ -19,6 +19,7 @@ include(":app")
 // Core
 include(":core:designsystem")
 include(":core:l10n")
+include(":core:navigation")
 // Features
 include(":favourites:api")
 include(":favourites:implementation")
