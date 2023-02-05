@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.core.navigation.find
+import com.melih.android.pokeapp.favourites.api.router.FavouritesRouter
 import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
 
 @Composable
@@ -21,6 +22,9 @@ internal fun PokeNavHost(
         modifier = modifier,
     ) {
         with(routers.find<PokemonsRouter>()) {
+            composable(navController, routers)
+        }
+        with(routers.find<FavouritesRouter>()) {
             composable(navController, routers)
         }
     }
