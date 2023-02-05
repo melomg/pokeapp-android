@@ -8,6 +8,7 @@ import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.core.navigation.find
 import com.melih.android.pokeapp.favourites.api.router.FavouritesRouter
 import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
+import com.melih.android.pokeapp.settings.api.router.SettingsRouter
 
 @Composable
 internal fun PokeNavHost(
@@ -25,6 +26,9 @@ internal fun PokeNavHost(
             composable(navController, routers)
         }
         with(routers.find<FavouritesRouter>()) {
+            composable(navController, routers)
+        }
+        with(routers.find<SettingsRouter>()) {
             composable(navController, routers)
         }
     }

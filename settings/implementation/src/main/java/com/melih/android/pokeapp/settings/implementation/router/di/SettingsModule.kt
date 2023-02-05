@@ -1,9 +1,9 @@
-package com.melih.android.pokeapp.pokemons.implementation.router.di
+package com.melih.android.pokeapp.settings.implementation.router.di
 
 import com.melih.android.pokeapp.core.navigation.NavigationRouter
 import com.melih.android.pokeapp.core.navigation.di.ScreenRouterKey
-import com.melih.android.pokeapp.pokemons.implementation.router.DefaultPokemonsRouter
-import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
+import com.melih.android.pokeapp.settings.api.router.SettingsRouter
+import com.melih.android.pokeapp.settings.implementation.router.DefaultSettingsRouter
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -13,11 +13,11 @@ import dagger.multibindings.IntoMap
 
 @Module
 @InstallIn(ActivityRetainedComponent::class)
-internal abstract class PokemonsModule {
+internal abstract class SettingsModule {
 
     @ActivityRetainedScoped
     @IntoMap
     @Binds
-    @ScreenRouterKey(PokemonsRouter::class)
-    abstract fun bindPokemonsRouter(router: DefaultPokemonsRouter): NavigationRouter
+    @ScreenRouterKey(SettingsRouter::class)
+    abstract fun bindSettingsRouter(router: DefaultSettingsRouter): NavigationRouter
 }
