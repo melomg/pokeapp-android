@@ -7,6 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(":favourites:implementation"))
-    implementation(libs.bundles.navigation.core)
+    implementation(project(":core:navigation"))
 }

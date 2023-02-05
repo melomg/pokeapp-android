@@ -5,3 +5,7 @@ plugins {
 android {
     namespace = "com.melih.android.pokeapp.pokemons.implementation"
 }
+
+dependencies {
+    implementation(project(":pokemons:api"))
+}

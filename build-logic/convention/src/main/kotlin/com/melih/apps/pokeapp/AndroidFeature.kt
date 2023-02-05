@@ -22,6 +22,7 @@ internal fun Project.configureAndroidFeature(
 
         add("implementation", project(":core:designsystem"))
         add("implementation", project(":core:l10n"))
+        add("implementation", project(":core:navigation"))
         add("implementation", androidx)
 
         add("implementation", libs.findLibrary("dagger-hilt-android").get())

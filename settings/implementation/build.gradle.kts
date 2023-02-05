@@ -5,3 +5,7 @@ plugins {
 android {
     namespace = "com.melih.android.pokeapp.settings.implementation"
 }
+
+dependencies {
+    implementation(project(":settings:api"))
+}
