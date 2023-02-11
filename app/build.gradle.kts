@@ -40,10 +40,7 @@ hilt {
 }
 
 dependencies {
-    implementation(project(":favourites:api"))
-    implementation(project(":favourites:impl"))
-    implementation(project(":pokemons:api"))
-    implementation(project(":pokemons:impl"))
-    implementation(project(":settings:api"))
-    implementation(project(":settings:impl"))
+    implementation(project(":favourites:impl-wiring"))
+    implementation(project(":pokemons:impl-wiring"))
+    implementation(project(":settings:impl-wiring"))
 }

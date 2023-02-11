@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -23,7 +25,10 @@ include(":core:navigation")
 // Features
 include(":favourites:api")
 include(":favourites:impl")
+include(":favourites:impl-wiring")
 include(":pokemons:api")
 include(":pokemons:impl")
+include(":pokemons:impl-wiring")
 include(":settings:api")
 include(":settings:impl")
+include(":settings:impl-wiring")
