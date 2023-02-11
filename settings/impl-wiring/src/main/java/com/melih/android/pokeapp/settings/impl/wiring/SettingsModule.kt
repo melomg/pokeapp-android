@@ -1,4 +1,4 @@
-package com.melih.android.pokeapp.settings.impl.router.di
+package com.melih.android.pokeapp.settings.impl.wiring
 
 import com.melih.android.pokeapp.core.navigation.NavigationRouter
 import com.melih.android.pokeapp.core.navigation.di.ScreenRouterKey

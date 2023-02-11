@@ -43,6 +43,5 @@ dependencies {
     implementation(project(":favourites:impl-wiring"))
     implementation(project(":pokemons:api"))
     implementation(project(":pokemons:impl"))
-    implementation(project(":settings:api"))
-    implementation(project(":settings:impl"))
+    implementation(project(":settings:impl-wiring"))
 }

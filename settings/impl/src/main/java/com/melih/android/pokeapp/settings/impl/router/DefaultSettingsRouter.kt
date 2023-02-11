@@ -10,7 +10,7 @@ import com.melih.android.pokeapp.settings.api.router.SettingsRouter
 import com.melih.android.pokeapp.settings.impl.ui.SettingsScreen
 import javax.inject.Inject
 
-internal class DefaultSettingsRouter @Inject constructor() : SettingsRouter() {
+class DefaultSettingsRouter @Inject constructor() : SettingsRouter() {
 
     @Composable
     override fun Composable(
