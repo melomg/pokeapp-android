@@ -10,7 +10,7 @@ import com.melih.android.pokeapp.favourites.api.router.FavouritesRouter
 import com.melih.android.pokeapp.favourites.impl.ui.FavouritesScreen
 import javax.inject.Inject
 
-internal class DefaultFavouritesRouter @Inject constructor() : FavouritesRouter() {
+class DefaultFavouritesRouter @Inject constructor() : FavouritesRouter() {
 
     @Composable
     override fun Composable(
