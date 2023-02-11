@@ -10,7 +10,7 @@ import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
 import com.melih.android.pokeapp.pokemons.impl.ui.PokemonsScreen
 import javax.inject.Inject
 
-internal class DefaultPokemonsRouter @Inject constructor() : PokemonsRouter() {
+class DefaultPokemonsRouter @Inject constructor() : PokemonsRouter() {
 
     @Composable
     override fun Composable(
