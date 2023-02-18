@@ -22,6 +22,7 @@ include(":app")
 include(":core:designsystem")
 include(":core:l10n")
 include(":core:navigation")
+include(":core:network")
 // Features
 include(":favourites:api")
 include(":favourites:impl")
