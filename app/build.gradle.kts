@@ -9,6 +9,8 @@ android {
         versionCode = 1
         versionName = "1.0.0"
 
+        resValue("string", "app_name", "PokeApp")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -18,6 +20,7 @@ android {
     buildTypes {
         val debug by getting {
             applicationIdSuffix = ".debug"
+            resValue("string", "app_name", "PokeApp Debug")
         }
         val release by getting {
             isMinifyEnabled = true
