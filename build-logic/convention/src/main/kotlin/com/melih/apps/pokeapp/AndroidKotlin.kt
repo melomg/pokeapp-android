@@ -5,10 +5,13 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.plugins.ExtensionAware
+import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.kotlin
+import org.gradle.kotlin.dsl.project
 import org.gradle.kotlin.dsl.provideDelegate
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 internal fun Project.configureAndroidKotlin(
@@ -44,13 +47,20 @@ internal fun Project.configureAndroidKotlin(
                 "-opt-in=kotlin.Experimental",
             )
         }
+
+        tasks.withType<Test> {
+            useJUnitPlatform()
+        }
     }
 
     dependencies {
+        add("implementation", project(":core:coroutines"))
         add("implementation", libs.findLibrary("dagger-hilt-core").get())
         add("kapt", libs.findLibrary("dagger-hilt-compiler").get())
 
         add("testImplementation", kotlin("test"))
+        add("testImplementation", project(":core:coroutines-test"))
+        add("testImplementation", libs.findBundle("unit-test").get())
     }
 }
 

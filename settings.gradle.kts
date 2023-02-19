@@ -19,6 +19,8 @@ rootProject.name = "PokeApp"
 
 include(":app")
 // Core
+include(":core:coroutines")
+include(":core:coroutines-test")
 include(":core:designsystem")
 include(":core:l10n")
 include(":core:navigation")
