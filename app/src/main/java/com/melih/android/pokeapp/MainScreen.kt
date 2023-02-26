@@ -14,9 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.core.navigation.find
-import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
 import com.melih.android.pokeapp.navigation.PokeBottomBar
 import com.melih.android.pokeapp.navigation.PokeNavHost
+import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
 
 @OptIn(
     ExperimentalLayoutApi::class,
@@ -24,14 +24,12 @@ import com.melih.android.pokeapp.navigation.PokeNavHost
 )
 @Composable
 internal fun MainScreen(routers: Routers) {
-
     val appState: PokeAppState = rememberPokeAppState(routers)
 
     Surface(
         color = MaterialTheme.colorScheme.background,
         modifier = Modifier.fillMaxSize(),
     ) {
-
         Scaffold(
             containerColor = Color.Transparent,
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
@@ -39,9 +37,9 @@ internal fun MainScreen(routers: Routers) {
                 PokeBottomBar(
                     destinations = appState.topLevelDestinations,
                     onNavigateToDestination = appState::navigateToTopLevelDestination,
-                    currentDestination = appState.currentDestination
+                    currentDestination = appState.currentDestination,
                 )
-            }
+            },
         ) { padding ->
             PokeNavHost(
                 navController = appState.navController,
@@ -49,7 +47,7 @@ internal fun MainScreen(routers: Routers) {
                 startDestination = routers.find<PokemonsRouter>().routeName,
                 modifier = Modifier
                     .padding(padding)
-                    .consumedWindowInsets(padding)
+                    .consumedWindowInsets(padding),
             )
         }
     }

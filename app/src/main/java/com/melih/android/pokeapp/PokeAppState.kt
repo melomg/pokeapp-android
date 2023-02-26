@@ -22,7 +22,7 @@ import com.melih.android.pokeapp.settings.api.router.SettingsRouter
 @Composable
 internal fun rememberPokeAppState(
     routers: Routers,
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
 ): PokeAppState = remember(navController) {
     PokeAppState(routers, navController)
 }
@@ -57,19 +57,19 @@ internal class PokeAppState(
             POKEMONS -> {
                 navController.navigate(
                     route = routers.find<PokemonsRouter>().routeName,
-                    navOptions = topLevelNavOptions
+                    navOptions = topLevelNavOptions,
                 )
             }
             FAVOURITES -> {
                 navController.navigate(
                     route = routers.find<FavouritesRouter>().routeName,
-                    navOptions = topLevelNavOptions
+                    navOptions = topLevelNavOptions,
                 )
             }
             SETTINGS -> {
                 navController.navigate(
                     route = routers.find<SettingsRouter>().routeName,
-                    navOptions = topLevelNavOptions
+                    navOptions = topLevelNavOptions,
                 )
             }
         }

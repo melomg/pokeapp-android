@@ -30,12 +30,12 @@ internal fun PokeBottomBar(
                     when (icon) {
                         is Icon.ImageVectorIcon -> Icon(
                             imageVector = icon.imageVector,
-                            contentDescription = null
+                            contentDescription = null,
                         )
 
                         is Icon.DrawableResourceIcon -> Icon(
                             painter = painterResource(id = icon.id),
-                            contentDescription = null
+                            contentDescription = null,
                         )
                     }
                 },

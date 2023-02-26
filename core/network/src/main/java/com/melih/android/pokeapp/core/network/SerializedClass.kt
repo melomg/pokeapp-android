@@ -9,6 +9,6 @@ package com.melih.android.pokeapp.core.network
     AnnotationTarget.CONSTRUCTOR,
     AnnotationTarget.FUNCTION,
     AnnotationTarget.FIELD,
-    AnnotationTarget.TYPE
+    AnnotationTarget.TYPE,
 )
 annotation class SerializedClass

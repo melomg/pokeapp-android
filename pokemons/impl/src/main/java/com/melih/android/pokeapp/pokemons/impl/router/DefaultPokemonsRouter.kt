@@ -16,10 +16,10 @@ class DefaultPokemonsRouter @Inject constructor() : PokemonsRouter() {
     override fun Composable(
         navController: NavHostController,
         routers: Routers,
-        backStackEntry: NavBackStackEntry
+        backStackEntry: NavBackStackEntry,
     ) {
         PokemonsScreen(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize(),
         )
     }
 }

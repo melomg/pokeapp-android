@@ -2,7 +2,7 @@ name: Pull Request CI
 
 on:
   pull_request:
-  push:
+  # push: I'm the only one working on the project.
     branches:
       - main
 concurrency:
@@ -32,6 +32,9 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
+
+      - name: Check spotless
+        run: ./gradlew --init-script gradle/init.gradle.kts spotlessCheck --no-configuration-cache
 
       - name: Check lint
         run: ./gradlew lintDebug

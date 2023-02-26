@@ -82,7 +82,7 @@ class ThemeTest {
      */
     private fun assertColorSchemesEqual(
         expectedColorScheme: ColorScheme,
-        actualColorScheme: ColorScheme
+        actualColorScheme: ColorScheme,
     ) {
         assertEquals(expectedColorScheme.primary, actualColorScheme.primary)
         assertEquals(expectedColorScheme.onPrimary, actualColorScheme.onPrimary)
@@ -93,7 +93,7 @@ class ThemeTest {
         assertEquals(expectedColorScheme.secondaryContainer, actualColorScheme.secondaryContainer)
         assertEquals(
             expectedColorScheme.onSecondaryContainer,
-            actualColorScheme.onSecondaryContainer
+            actualColorScheme.onSecondaryContainer,
         )
         assertEquals(expectedColorScheme.tertiary, actualColorScheme.tertiary)
         assertEquals(expectedColorScheme.onTertiary, actualColorScheme.onTertiary)

@@ -16,10 +16,10 @@ class DefaultFavouritesRouter @Inject constructor() : FavouritesRouter() {
     override fun Composable(
         navController: NavHostController,
         routers: Routers,
-        backStackEntry: NavBackStackEntry
+        backStackEntry: NavBackStackEntry,
     ) {
         FavouritesScreen(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize(),
         )
     }
 }
