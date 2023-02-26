@@ -36,7 +36,10 @@ internal fun Project.configureJacoco(
     }
 
     val jacocoTestReport = tasks.create("jacocoTestReport")
-    val minimumCoverage = "0.4".toBigDecimal() // fixme increase this to 0.8 when ui tests are added
+
+    // https://github.com/melomg/pokeapp-android/issues/16
+    // fixme increase this to 0.8 when ui tests are added
+    val minimumCoverage = "0.4".toBigDecimal()
 
     val debug = androidComponentsExtension.selector().withBuildType("debug")
     androidComponentsExtension.onVariants(debug) { variant ->
