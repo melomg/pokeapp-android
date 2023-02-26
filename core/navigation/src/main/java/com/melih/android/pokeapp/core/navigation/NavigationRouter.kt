@@ -33,7 +33,7 @@ interface ComposableRouter : NavigationRouter {
     fun Composable(
         navController: NavHostController,
         routers: Routers,
-        backStackEntry: NavBackStackEntry
+        backStackEntry: NavBackStackEntry,
     )
 }
 

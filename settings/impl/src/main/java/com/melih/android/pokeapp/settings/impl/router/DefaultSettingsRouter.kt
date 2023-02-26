@@ -16,10 +16,10 @@ class DefaultSettingsRouter @Inject constructor() : SettingsRouter() {
     override fun Composable(
         navController: NavHostController,
         routers: Routers,
-        backStackEntry: NavBackStackEntry
+        backStackEntry: NavBackStackEntry,
     ) {
         SettingsScreen(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize(),
         )
     }
 }

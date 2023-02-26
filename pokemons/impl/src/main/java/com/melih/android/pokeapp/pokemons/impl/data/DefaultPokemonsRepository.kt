@@ -4,9 +4,9 @@ import com.melih.android.pokeapp.core.coroutines.DispatcherProvider
 import com.melih.android.pokeapp.pokemons.api.data.PokemonsRepository
 import com.melih.android.pokeapp.pokemons.api.model.Pokemons
 import com.melih.android.pokeapp.pokemons.impl.data.mapper.toDomainModel
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Singleton
-import kotlinx.coroutines.withContext
 
 @Singleton
 class DefaultPokemonsRepository @Inject constructor(

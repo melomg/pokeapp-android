@@ -20,5 +20,5 @@ internal enum class TopLevelDestination(
     SETTINGS(
         selectedIcon = ImageVectorIcon(PokeIcons.Settings),
         unselectedIcon = ImageVectorIcon(PokeIcons.Settings),
-    )
+    ),
 }
