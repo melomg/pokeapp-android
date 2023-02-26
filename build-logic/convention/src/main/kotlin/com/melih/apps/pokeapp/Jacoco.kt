@@ -10,7 +10,9 @@ import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.gradle.testing.jacoco.plugins.JacocoPluginExtension
 import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
+import org.gradle.testing.jacoco.tasks.JacocoCoverageVerification
 import org.gradle.testing.jacoco.tasks.JacocoReport
+import org.gradle.testing.jacoco.tasks.JacocoReportBase
 
 private val coverageExclusions = listOf(
     // Android
@@ -34,12 +36,16 @@ internal fun Project.configureJacoco(
     }
 
     val jacocoTestReport = tasks.create("jacocoTestReport")
+    val minimumCoverage = "0.4".toBigDecimal() // fixme increase this to 0.8 when ui tests are added
 
     val debug = androidComponentsExtension.selector().withBuildType("debug")
     androidComponentsExtension.onVariants(debug) { variant ->
         val testTaskName = "test${variant.name.capitalize()}UnitTest"
 
-        val reportTask = tasks.register("jacoco${testTaskName.capitalize()}Report", JacocoReport::class) {
+        val reportTask = tasks.register(
+            name = "jacoco${testTaskName.capitalize()}Report",
+            type = JacocoReport::class
+        ) {
             group = "Verification"
             description = "Generate JaCoCo coverage report for the debug unit tests."
             dependsOn(testTaskName)
@@ -49,17 +55,40 @@ internal fun Project.configureJacoco(
                 html.required.set(true)
             }
 
-            classDirectories.setFrom(
-                fileTree("$buildDir/tmp/kotlin-classes/${variant.name}") {
-                    exclude(coverageExclusions)
-                }
-            )
-
-            sourceDirectories.setFrom(files("$projectDir/src/main/java", "$projectDir/src/main/kotlin"))
-            executionData.setFrom(file("$buildDir/jacoco/$testTaskName.exec"))
+            setDirectories(variant.name, testTaskName)
         }
 
         jacocoTestReport.dependsOn(reportTask)
+    }
+
+    tasks.register(
+        name = "jacocoCoverageVerification",
+        type = JacocoCoverageVerification::class
+    ) {
+        group = "Verification"
+        description = "Code coverage report"
+        dependsOn(jacocoTestReport)
+
+        violationRules {
+            rule {
+                limit {
+                    minimum = minimumCoverage
+                }
+            }
+            rule {
+                element = "CLASS"
+                excludes = listOf(
+                    "**.Companion",
+                    "**.*ScreenKt",
+                    "**.*Router",
+                )
+                limit {
+                    minimum = minimumCoverage
+                }
+            }
+        }
+
+        setDirectories("debug", "testDebugUnitTest")
     }
 
     tasks.withType<Test>().configureEach {
@@ -71,4 +100,22 @@ internal fun Project.configureJacoco(
             excludes = listOf("jdk.internal.*")
         }
     }
+}
+
+private fun JacocoReportBase.setDirectories(
+    variantName: String,
+    testTaskName: String,
+) {
+    classDirectories.setFrom(
+        project.fileTree("${project.buildDir}/tmp/kotlin-classes/$variantName") {
+            exclude(coverageExclusions)
+        }
+    )
+    sourceDirectories.setFrom(
+        project.files(
+            "${project.projectDir}/src/main/java",
+            "${project.projectDir}/src/main/kotlin"
+        )
+    )
+    executionData.setFrom(project.file("${project.buildDir}/jacoco/$testTaskName.exec"))
 }

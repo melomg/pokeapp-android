@@ -2,7 +2,7 @@ name: Pull Request CI
 
 on:
   pull_request:
-  # push: I'm the only one working on the project.
+    # push: I'm the only one working on the project.
     branches:
       - main
 concurrency:
@@ -42,8 +42,11 @@ jobs:
       - name: Build debug build type
         run: ./gradlew assembleDebug
 
-      - name: Run debug unit tests
+      - name: Run debug unit tests and create jacoco report
         run: ./gradlew testDebugUnitTest
+
+      - name: Verify jacoco code coverage
+        run: ./gradlew jacocoCoverageVerification
 
       - name: Upload build outputs (APKs)
         uses: actions/upload-artifact@v3
