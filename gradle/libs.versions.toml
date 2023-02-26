@@ -33,6 +33,9 @@ junitJupiter = '5.8.2'
 turbine = '0.7.0'
 mockk = '1.13.4'
 
+# Test coverage
+jacoco= '0.8.8'
+
 [libraries]
 # Androidx dependencies
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
