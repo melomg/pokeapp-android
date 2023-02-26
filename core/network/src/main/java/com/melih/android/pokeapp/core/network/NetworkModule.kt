@@ -1,8 +1,11 @@
 package com.melih.android.pokeapp.core.network
 
+import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -55,5 +58,9 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    internal fun provideHttpInterceptors(): Array<Interceptor> = emptyArray()
+    internal fun provideHttpInterceptors(
+        @ApplicationContext appContext: Context,
+    ): Array<Interceptor> = arrayOf(
+        ChuckerInterceptor.Builder(appContext).build(),
+    )
 }
