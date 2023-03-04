@@ -23,6 +23,8 @@ retrofit = '2.9.0'
 okhttp = '4.10.0'
 chucker = '3.5.2'
 
+timber = '5.0.1'
+
 androidxEspresso = '3.4.0'
 androidxTestCore = "1.5.0"
 androidxTestExt = "1.1.4"
@@ -80,6 +82,9 @@ okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
 chucker-noop = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "chucker" }
+
+# Log dependencies
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
 # Test dependencies
 androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
