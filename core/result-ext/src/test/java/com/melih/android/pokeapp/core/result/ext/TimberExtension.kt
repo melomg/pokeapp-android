@@ -21,13 +21,13 @@ internal class TimberExtension : BeforeEachCallback, AfterEachCallback, Paramete
 
     override fun supportsParameter(
         parameterContext: ParameterContext?,
-        extensionContext: ExtensionContext?
+        extensionContext: ExtensionContext?,
     ): Boolean {
         return parameterContext?.parameter?.type?.equals(TestTimber::class.java) == true
     }
 
     override fun resolveParameter(
         parameterContext: ParameterContext?,
-        extensionContext: ExtensionContext?
+        extensionContext: ExtensionContext?,
     ): TestTimber = timber
 }
