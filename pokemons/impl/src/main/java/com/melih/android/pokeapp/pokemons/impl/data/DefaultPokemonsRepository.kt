@@ -22,10 +22,6 @@ class DefaultPokemonsRepository @Inject constructor(
             service
                 .getPokemons(limit = limit, offset = offset)
                 .toDomainModel()
-        }.alsoLogError(TAG)
-    }
-
-    companion object {
-        private val TAG: String = DefaultPokemonsRepository::class.java.name
+        }.alsoLogError()
     }
 }
