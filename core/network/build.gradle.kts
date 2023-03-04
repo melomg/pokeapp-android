@@ -12,4 +12,7 @@ android {
 
 dependencies {
     api(libs.bundles.network)
+    implementation(libs.dagger.hilt.android)
+    debugImplementation(libs.chucker)
+    releaseImplementation(libs.chucker.noop)
 }
