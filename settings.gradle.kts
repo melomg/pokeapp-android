@@ -25,6 +25,7 @@ include(":core:designsystem")
 include(":core:l10n")
 include(":core:navigation")
 include(":core:network")
+include(":core:result-ext")
 // Features
 include(":favourites:api")
 include(":favourites:impl")

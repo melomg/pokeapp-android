@@ -8,5 +8,6 @@ android {
 
 dependencies {
     implementation(project(":core:network"))
+    implementation(project(":core:result-ext"))
     implementation(project(":pokemons:api"))
 }
