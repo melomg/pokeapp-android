@@ -2,6 +2,10 @@ package com.melih.android.pokeapp.core.result.ext
 
 import timber.log.Timber
 
+/**
+ * Helps testing timber logs.
+ * Modified from https://kotlintesting.com/test-timber/
+ */
 internal class TestTimber : Timber.Tree() {
 
     val logs = mutableListOf<Log>()
