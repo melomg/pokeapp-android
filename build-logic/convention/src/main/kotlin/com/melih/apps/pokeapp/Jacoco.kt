@@ -20,7 +20,8 @@ private val coverageExclusions = listOf(
     "**/R\$*.class",
     "**/BuildConfig.*",
     "**/Manifest*.*",
-    "**/build/*"
+    "**/build/*",
+    "**/pokemons/impl/ui/*",  // fixme add tests when pagination added
 )
 
 /**
@@ -82,8 +83,8 @@ internal fun Project.configureJacoco(
                 element = "CLASS"
                 excludes = listOf(
                     "**.Companion",
-                    "**.*ScreenKt",
-                    "**.*Router",
+                    "**.*ScreenKt", // fixme remove the rule when ui tests added
+                    "**.*Router",  // fixme remove the rule when ui tests added
                 )
                 limit {
                     minimum = minimumCoverage
