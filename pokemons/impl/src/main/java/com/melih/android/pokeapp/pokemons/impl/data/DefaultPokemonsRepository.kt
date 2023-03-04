@@ -1,6 +1,7 @@
 package com.melih.android.pokeapp.pokemons.impl.data
 
 import com.melih.android.pokeapp.core.coroutines.DispatcherProvider
+import com.melih.android.pokeapp.core.result.ext.alsoLogError
 import com.melih.android.pokeapp.pokemons.api.data.PokemonsRepository
 import com.melih.android.pokeapp.pokemons.api.model.Pokemons
 import com.melih.android.pokeapp.pokemons.impl.data.mapper.toDomainModel
@@ -21,6 +22,6 @@ class DefaultPokemonsRepository @Inject constructor(
             service
                 .getPokemons(limit = limit, offset = offset)
                 .toDomainModel()
-        }
+        }.alsoLogError()
     }
 }

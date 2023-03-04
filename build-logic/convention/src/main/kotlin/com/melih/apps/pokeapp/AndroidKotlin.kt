@@ -55,8 +55,11 @@ internal fun Project.configureAndroidKotlin(
 
     dependencies {
         add("implementation", project(":core:coroutines"))
+
         add("implementation", libs.findLibrary("dagger-hilt-core").get())
         add("kapt", libs.findLibrary("dagger-hilt-compiler").get())
+
+        add("implementation", libs.findLibrary("timber").get())
 
         add("testImplementation", kotlin("test"))
         add("testImplementation", project(":core:coroutines-test"))
