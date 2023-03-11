@@ -1,12 +1,13 @@
 [versions]
 gradlePlugin = "7.3.1"
 
-androidxComposeBom = "2022.11.00"
-androidxComposeCompiler = "1.3.2"
+androidxComposeBom = "2023.01.00"
+androidxComposeCompiler = "1.4.3"
+
+# todo implement composition tracing https://developer.android.com/jetpack/compose/performance/tracing
 androidxComposeRuntimeTracing = "1.0.0-alpha01"
 
-compose = "1.1.1"
-kotlin = '1.7.20'
+kotlin = '1.8.10'
 kotlinxCoroutines = '1.6.4'
 
 androidxCore = '1.9.0'
@@ -17,7 +18,7 @@ androidxNavigation = '2.5.3'
 androidxHiltNavigation = '1.0.0'
 googleAccompanist = '0.29.0-alpha'
 
-dagger = '2.42'
+dagger = '2.45'
 
 retrofit = '2.9.0'
 okhttp = '4.10.0'
@@ -41,7 +42,7 @@ turbine = '0.7.0'
 jacoco = '0.8.8'
 
 [libraries]
-# Androidx dependencies
+# Androidx
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivityCompose" }
@@ -53,7 +54,7 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigation" }
 androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxNavigation" }
 
-# Compose dependencies
+# Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
 androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
@@ -64,18 +65,18 @@ androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "u
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 google-accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "googleAccompanist" }
 
-# Kotlin dependencies
-kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+# Kotlin
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 
-# Dagger dependencies
+# Dagger
 dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
 dagger-hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "dagger" }
 dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger" }
 dagger-hilt-test = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
 
-# Network dependencies
+# Network
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
@@ -83,10 +84,10 @@ okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor",
 chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
 chucker-noop = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "chucker" }
 
-# Log dependencies
+# Log
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
-# Test dependencies
+# Test
 androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-ui-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
