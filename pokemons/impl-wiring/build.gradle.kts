@@ -10,4 +10,5 @@ dependencies {
     api(project(":pokemons:api"))
     implementation(project(":core:network"))
     implementation(project(":pokemons:impl"))
+    implementation(libs.androidx.paging.common)
 }
