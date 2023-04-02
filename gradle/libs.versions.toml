@@ -17,7 +17,7 @@ androidxLifecycle = '2.6.0-alpha03'
 androidxNavigation = '2.5.3'
 androidxHiltNavigation = '1.0.0'
 googleAccompanist = '0.29.0-alpha'
-androidxPaging = '3.1.1'
+androidxPaging = '3.2.0-alpha04'
 androidxPagingCompose = '1.0.0-alpha18'
 
 dagger = '2.45'
@@ -105,7 +105,7 @@ androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espres
 androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "androidxTestRules" }
 androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
 androidx-test-uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "androidxUiAutomator" }
-androidx-test-paging = { group = "androidx.paging", name = "paging-common", version.ref = "androidxPaging" }
+androidx-test-paging = { group = "androidx.paging", name = "paging-testing", version.ref = "androidxPaging" }
 
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 
