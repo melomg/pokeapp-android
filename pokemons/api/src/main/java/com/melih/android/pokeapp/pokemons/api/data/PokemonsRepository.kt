@@ -1,8 +1,10 @@
 package com.melih.android.pokeapp.pokemons.api.data
 
-import com.melih.android.pokeapp.pokemons.api.model.Pokemons
+import androidx.paging.PagingData
+import com.melih.android.pokeapp.pokemons.api.model.Pokemon
+import kotlinx.coroutines.flow.Flow
 
 interface PokemonsRepository {
 
-    suspend fun getPokemons(limit: Int, offset: Int): Result<Pokemons>
+    fun getPokemons(): Flow<PagingData<Pokemon>>
 }

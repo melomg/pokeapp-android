@@ -1,4 +1,4 @@
-package com.melih.android.pokeapp.pokemons.impl.data.response
+package com.melih.android.pokeapp.pokemons.impl.data.model
 
 import com.melih.android.pokeapp.core.network.SerializedClass
 

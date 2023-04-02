@@ -1,8 +1,10 @@
 package com.melih.android.impl.wiring
 
+import androidx.paging.PagingConfig
 import com.melih.android.pokeapp.pokemons.api.data.PokemonsRepository
 import com.melih.android.pokeapp.pokemons.impl.data.DefaultPokemonsRepository
-import com.melih.android.pokeapp.pokemons.impl.data.PokemonService
+import com.melih.android.pokeapp.pokemons.impl.data.datasource.PAGE_SIZE
+import com.melih.android.pokeapp.pokemons.impl.data.datasource.PokemonService
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -28,5 +30,14 @@ internal abstract class PokemonsDataModule {
         internal fun provideService(
             retrofit: Retrofit,
         ): PokemonService = retrofit.create()
+
+        @Provides
+        @Reusable
+        internal fun providePagingConfig(): PagingConfig = PagingConfig(
+            pageSize = PAGE_SIZE,
+            prefetchDistance = PAGE_SIZE,
+            initialLoadSize = PAGE_SIZE,
+            enablePlaceholders = false,
+        )
     }
 }

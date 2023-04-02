@@ -12,5 +12,6 @@ dependencies {
     implementation(project(":pokemons:api"))
     implementation(libs.bundles.paging)
 
+    testImplementation(libs.androidx.paging.common)
     testImplementation(libs.androidx.test.paging)
 }

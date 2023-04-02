@@ -1,9 +1,9 @@
 package com.melih.android.pokeapp.pokemons.impl.data.mapper
 
 import com.melih.android.pokeapp.pokemons.api.model.Pokemon
-import com.melih.android.pokeapp.pokemons.api.model.Pokemons
-import com.melih.android.pokeapp.pokemons.impl.data.response.PokemonResponse
-import com.melih.android.pokeapp.pokemons.impl.data.response.PokemonsResponse
+import com.melih.android.pokeapp.pokemons.impl.data.model.PokemonResponse
+import com.melih.android.pokeapp.pokemons.impl.data.model.PokemonsResponse
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
@@ -13,63 +13,77 @@ import kotlin.test.assertEquals
 
 internal class PokemonDataMapperTest {
 
+    @Test
+    fun `pokemons response is mapped correctly`() {
+        assertEquals(
+            expected = pokemons,
+            actual = pokemonsResponse.mapToDomainModel(),
+        )
+    }
+
     @ParameterizedTest
-    @MethodSource("getPokemons")
-    fun `response is mapped correctly`(
-        response: PokemonsResponse,
-        expectedDomainModel: Pokemons,
+    @MethodSource("getOffsetTestingParams")
+    fun `offset is parsed correctly`(
+        url: String,
+        expectedOffset: Int?,
     ) {
         assertEquals(
-            expected = expectedDomainModel,
-            actual = response.toDomainModel(),
+            expected = expectedOffset,
+            actual = url.parseOffset(),
         )
     }
 
     companion object {
-        private val defaultPokemonsResponse = PokemonsResponse(
+        private val pokemonsResponse = PokemonsResponse(
             count = 100,
-            next = "10",
-            previous = "10",
+            next = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=10",
+            previous = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10",
             results = listOf(
                 PokemonResponse("name", "url"),
                 PokemonResponse("name1", "url1"),
             ),
         )
 
-        private val defaultPokemons = Pokemons(
-            count = 100,
-            next = "10",
-            previous = "10",
-            results = listOf(
-                Pokemon("name", "url"),
-                Pokemon("name1", "url1"),
-            ),
+        private val pokemons = listOf(
+            Pokemon("name", "url"),
+            Pokemon("name1", "url1"),
         )
 
         @JvmStatic
-        fun getPokemons(): Stream<Arguments> = Stream.of(
-            arguments(defaultPokemonsResponse, defaultPokemons),
+        fun getOffsetTestingParams(): Stream<Arguments> = Stream.of(
             arguments(
-                defaultPokemonsResponse.copy(
-                    next = null,
-                    previous = null,
-                    results = emptyList(),
-                ),
-                defaultPokemons.copy(
-                    next = null,
-                    previous = null,
-                    results = emptyList(),
-                ),
+                "https://pokeapi.co/api/v2/pokemon?offset=20&limit=10",
+                20,
             ),
+            // when there is no ampersand sign and limit comes afterwards
             arguments(
-                defaultPokemonsResponse.copy(
-                    next = "",
-                    previous = "",
-                ),
-                defaultPokemons.copy(
-                    next = "",
-                    previous = "",
-                ),
+                "https://sth.com/pokemon?offset=12limit=10",
+                null,
+            ),
+            // when there is no ampersand sign and no param afterwards
+            arguments(
+                "https://pokeapi.co/api/v2/pokemon?offset=10",
+                10,
+            ),
+            // when limit comes first in params
+            arguments(
+                "https://pokeapi.co/api/v2/pokemon?limit=10&offset=20",
+                20,
+            ),
+            // when there is only query parts in url
+            arguments(
+                "offset=20&limit=10",
+                20,
+            ),
+            // when there is no offset in params
+            arguments(
+                "https://pokeapi.co/api/v2/pokemon?limit=10",
+                null,
+            ),
+            // when empty string
+            arguments(
+                "",
+                null,
             ),
         )
     }
