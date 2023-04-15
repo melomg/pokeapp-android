@@ -10,4 +10,8 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:result-ext"))
     implementation(project(":pokemons:api"))
+    implementation(libs.bundles.paging)
+
+    testImplementation(libs.androidx.paging.common)
+    testImplementation(libs.androidx.test.paging)
 }

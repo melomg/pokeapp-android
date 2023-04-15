@@ -21,5 +21,6 @@ tasks {
 }
 
 dependencies {
-    implementation(libs.kotlinx.coroutines.core)
+    api(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlin.stdlib)
 }

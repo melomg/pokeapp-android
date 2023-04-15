@@ -18,6 +18,7 @@ private val coverageExclusions = listOf(
     // Android
     "**/R.class",
     "**/R\$*.class",
+    "**/*Factory*.class",
     "**/BuildConfig.*",
     "**/Manifest*.*",
     "**/build/*",

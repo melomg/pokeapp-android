@@ -1,6 +1,6 @@
-package com.melih.android.pokeapp.pokemons.impl.data
+package com.melih.android.pokeapp.pokemons.impl.data.datasource
 
-import com.melih.android.pokeapp.pokemons.impl.data.response.PokemonsResponse
+import com.melih.android.pokeapp.pokemons.impl.data.model.PokemonsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -8,7 +8,7 @@ interface PokemonService {
 
     @GET("pokemon")
     suspend fun getPokemons(
-        @Query("limit") limit: Int,
         @Query("offset") offset: Int,
+        @Query("limit") limit: Int,
     ): PokemonsResponse
 }
