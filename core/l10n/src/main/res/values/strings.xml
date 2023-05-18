@@ -3,4 +3,6 @@
     <string name="pokemons">Pokemons</string>
     <string name="favourites">Favourites</string>
     <string name="settings">Settings</string>
+
+    <string name="generic_error">Unknown error occurred!</string>
 </resources>

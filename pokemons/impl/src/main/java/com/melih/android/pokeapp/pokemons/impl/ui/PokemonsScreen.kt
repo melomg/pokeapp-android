@@ -1,10 +1,9 @@
 package com.melih.android.pokeapp.pokemons.impl.ui
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
@@ -16,20 +15,9 @@ internal fun PokemonsScreen(
 ) {
     val pokemons = viewModel.paging.collectAsLazyPagingItems()
 
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = modifier,
-    ) {
-        when (pokemons.loadState.refresh) {
-            is LoadState.Error -> {
-                Text(text = "Pokemons Error")
-            }
-            is LoadState.Loading -> {
-                Text(text = "Pokemons Loading")
-            }
-            else -> {
-                Text(text = "Pokemons Initial")
-            }
-        }
+    when (val refreshState = pokemons.loadState.refresh) {
+        is LoadState.Error -> PokemonsErrorState(refreshState.error.message)
+        is LoadState.Loading -> LoadingRow(modifier.padding(top = 24.dp))
+        is LoadState.NotLoading -> PokemonsSuccessState(pokemons)
     }
 }
