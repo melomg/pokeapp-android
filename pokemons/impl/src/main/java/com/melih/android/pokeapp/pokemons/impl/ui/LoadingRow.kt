@@ -8,6 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.melih.android.pokeapp.core.designsystem.compose.DevicePreviews
+import com.melih.android.pokeapp.core.designsystem.theme.PokeAppTheme
 
 @Composable
 internal fun LoadingRow(
@@ -20,5 +22,13 @@ internal fun LoadingRow(
             .padding(12.dp),
     ) {
         CircularProgressIndicator()
+    }
+}
+
+@DevicePreviews
+@Composable
+private fun LoadingRowPreview() {
+    PokeAppTheme {
+        LoadingRow()
     }
 }
