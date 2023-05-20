@@ -39,14 +39,14 @@ internal class PokemonDataMapperTest {
             next = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=10",
             previous = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10",
             results = listOf(
-                PokemonResponse("name", "url"),
-                PokemonResponse("name1", "url1"),
+                PokemonResponse("name", "https://pokeapi.co/api/v2/pokemon/25/"),
+                PokemonResponse("name1", "https://pokeapi.co/api/v2/pokemon/1"),
             ),
         )
 
         private val pokemons = listOf(
-            Pokemon("name", "url"),
-            Pokemon("name1", "url1"),
+            Pokemon("name", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"),
+            Pokemon("name1", ""),
         )
 
         @JvmStatic
