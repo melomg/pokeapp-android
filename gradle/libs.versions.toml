@@ -7,6 +7,8 @@ androidxComposeCompiler = "1.4.3"
 # todo implement composition tracing https://developer.android.com/jetpack/compose/performance/tracing
 androidxComposeRuntimeTracing = "1.0.0-alpha01"
 
+detektPlugin = '1.23.0'
+
 kotlin = '1.8.10'
 kotlinxCoroutines = '1.6.4'
 
@@ -75,7 +77,7 @@ androidx-paging-runtime = { group = "androidx.paging", name = "paging-runtime-kt
 androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "androidxPagingCompose" }
 
 # Image
-coil-compose= { group = "io.coil-kt", name = "coil-compose", version.ref = "coilCompose" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilCompose" }
 
 # Kotlin
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
@@ -181,3 +183,4 @@ android-application = { id = "com.android.application", version.ref = "gradlePlu
 android-library = { id = "com.android.library", version.ref = "gradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektPlugin" }
