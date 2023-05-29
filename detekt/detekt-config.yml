@@ -1,7 +1,7 @@
 # Extra detekt config to change the default.
 naming:
   FunctionNaming:
-    ignoreAnnotated: [ 'DevicePreviews', 'Composable' ]
+    ignoreAnnotated: [ 'Composable' ]
 
 style:
   UnusedPrivateMember:
@@ -9,8 +9,12 @@ style:
   MaxLineLength:
     excludes: [ "**/test/**","**/androidTest/**" ]
   MagicNumber:
+    excludes: [ "**/test/**","**/androidTest/**" ]
     ignorePropertyDeclaration: true
-    excludes: [ "**/test/**","**/androidTest/**","**/compose/**" ]
+    ignoreCompanionObjectPropertyDeclaration: true
+  UnnecessaryAbstractClass:
+    active: true
+    ignoreAnnotated: "dagger.Module"
 
 TwitterCompose:
   CompositionLocalAllowlist:

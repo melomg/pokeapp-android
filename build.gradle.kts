@@ -14,12 +14,16 @@ plugins {
     alias(libs.plugins.detekt)
 }
 
-detekt {
-    parallel = true
-    source.setFrom(getDetektSourcePaths())
-    config.from(files("${rootProject.projectDir}/detekt/detekt-config.yml"))
-    buildUponDefaultConfig = true
-    ignoreFailures = false
+allprojects {
+    apply(plugin = "io.gitlab.arturbosch.detekt")
+
+    detekt {
+        parallel = true
+        buildUponDefaultConfig = true
+        source.setFrom(getDetektSourcePaths())
+        config.setFrom(files("${rootProject.projectDir}/detekt/detekt-config.yml"))
+        ignoreFailures = false
+    }
 }
 
 fun getDetektSourcePaths(): List<File> {
@@ -32,11 +36,4 @@ fun getDetektSourcePaths(): List<File> {
         sourceDirs.add(file("${it.projectDir}/src/androidTest/java"))
     }
     return sourceDirs.filter { it.exists() }
-}
-
-allprojects {
-    apply(plugin = "io.gitlab.arturbosch.detekt")
-    dependencies {
-        detektPlugins("com.twitter.compose.rules:detekt:0.0.26")
-    }
 }
