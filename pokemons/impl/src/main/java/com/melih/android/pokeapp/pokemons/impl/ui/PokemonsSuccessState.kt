@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.dp
@@ -16,11 +17,15 @@ import com.melih.android.pokeapp.pokemons.api.model.Pokemon
 import com.melih.android.pokeapp.pokemons.impl.R
 
 @Composable
-fun PokemonsSuccessState(pokemons: LazyPagingItems<Pokemon>) {
+fun PokemonsSuccessState(
+    pokemons: LazyPagingItems<Pokemon>,
+    modifier: Modifier = Modifier,
+) {
     val appendState = pokemons.loadState.append
     val context = LocalContext.current
 
     LazyVerticalGrid(
+        modifier = modifier,
         contentPadding = PaddingValues(16.dp),
         columns = GridCells.Adaptive(minSize = dimensionResource(R.dimen.pokemon_image_size)),
         horizontalArrangement = Arrangement.spacedBy(12.dp),

@@ -8,14 +8,13 @@ PokeApp is using Android Studio Dolphin | 2021.3.1 Patch 1 version
 
 ## Formatting
 
-Project is using [spotless](https://github.com/diffplug/spotless) to format and check code style. 
-Please run below command to format code before committing (pre-commit hook will be installed later)
-
-`./gradlew --init-script gradle/init.gradle.kts spotlessApply --no-configuration-cache`
+Project is using [detekt](https://github.com/detekt/detekt) for static code analysis. Please run
+below command to format code before committing (pre-commit hook will be installed later)
 
 ## Tech Stack:
 
-Demonstrates using Dagger 2.45+ in MVVM app with Android Architecture Components and Repository pattern.
+Demonstrates using Dagger 2.45+ in MVVM app with Android Architecture Components and Repository
+pattern.
 
 - MVVM
 - Repository pattern
@@ -27,21 +26,23 @@ Demonstrates using Dagger 2.45+ in MVVM app with Android Architecture Components
 - JUnit 5
 - Retrofit
 
-## Articles I've read and inspired when coding this playground app 
+## Articles I've read and inspired when coding this playground app
 
 For modular design:
+
 - [Android at scale @Square](https://www.droidcon.com/2019/11/15/android-at-scale-square/)
 - [Navigating through multi-module Jetpack Compose applications](https://proandroiddev.com/navigating-through-multi-module-jetpack-compose-applications-6c9a31fa12b6)
 - [Modularising Trendyol Android App for Build Efficiency](https://medium.com/trendyol-tech/modularising-trendyol-android-app-for-build-efficiency-94f6b79fc012)
 - [Herding Elephants](https://developer.squareup.com/blog/herding-elephants/)
 
 For architecture:
+
 - [Principles & Practice in Repository Layer](https://proandroiddev.com/principles-practice-in-repository-layer-444551b96cf8)
 
 For testing:
+
 - [The hidden cost of code coverage](https://jeroenmols.com/blog/2016/09/01/coveragecost/)
 - [Don't mock static: test Timber Logger with trees](https://kotlintesting.com/test-timber/)
-
 
 ## Authors
 

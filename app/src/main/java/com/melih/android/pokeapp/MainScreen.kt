@@ -23,12 +23,15 @@ import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
     ExperimentalMaterial3Api::class,
 )
 @Composable
-internal fun MainScreen(routers: Routers) {
+internal fun MainScreen(
+    routers: Routers,
+    modifier: Modifier = Modifier,
+) {
     val appState: PokeAppState = rememberPokeAppState(routers)
 
     Surface(
         color = MaterialTheme.colorScheme.background,
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
     ) {
         Scaffold(
             containerColor = Color.Transparent,
