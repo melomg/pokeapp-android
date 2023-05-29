@@ -8,8 +8,9 @@ PokeApp is using Android Studio Dolphin | 2021.3.1 Patch 1 version
 
 ## Formatting
 
-Project is using [detekt](https://github.com/detekt/detekt) for static code analysis. Please run
-below command to format code before committing (pre-commit hook will be installed later)
+Project is using [detekt](https://github.com/detekt/detekt) for static code analysis together with [Twitter's compose rules](https://github.com/twitter/compose-rules). Please run below command before committing and pushing your code. (pre-commit hook will be installed later)
+
+`./gradlew detekt`
 
 ## Tech Stack:
 
