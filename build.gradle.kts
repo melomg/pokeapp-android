@@ -24,6 +24,10 @@ allprojects {
         config.setFrom(files("${rootProject.projectDir}/detekt/detekt-config.yml"))
         ignoreFailures = false
     }
+
+    dependencies {
+        detektPlugins("com.twitter.compose.rules:detekt:0.0.26")
+    }
 }
 
 fun getDetektSourcePaths(): List<File> {
