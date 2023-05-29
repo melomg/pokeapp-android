@@ -18,6 +18,8 @@ import com.melih.android.pokeapp.navigation.TopLevelDestination.POKEMONS
 import com.melih.android.pokeapp.navigation.TopLevelDestination.SETTINGS
 import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
 import com.melih.android.pokeapp.settings.api.router.SettingsRouter
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 internal fun rememberPokeAppState(
@@ -36,7 +38,10 @@ internal class PokeAppState(
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
 
-    val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.values().asList()
+    val topLevelDestinations: ImmutableList<TopLevelDestination> = TopLevelDestination
+        .values()
+        .asList()
+        .toImmutableList()
 
     fun navigateToTopLevelDestination(topLevelDestination: TopLevelDestination) {
         val topLevelNavOptions = navOptions {

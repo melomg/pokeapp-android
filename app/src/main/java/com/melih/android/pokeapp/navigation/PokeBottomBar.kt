@@ -8,10 +8,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import com.melih.android.pokeapp.core.designsystem.icon.Icon
+import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 internal fun PokeBottomBar(
-    destinations: List<TopLevelDestination>,
+    destinations: ImmutableList<TopLevelDestination>,
     onNavigateToDestination: (TopLevelDestination) -> Unit,
     currentDestination: NavDestination?,
 ) {
