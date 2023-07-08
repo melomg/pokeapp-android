@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(":settings:api"))
+    implementation(project(":features:settings:api"))
 }

@@ -9,7 +9,7 @@ android {
 dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:result-ext"))
-    implementation(project(":pokemons:api"))
+    implementation(project(":features:pokemons:api"))
     implementation(libs.bundles.paging)
     implementation(libs.coil.compose)
 
