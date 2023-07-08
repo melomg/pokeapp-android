@@ -40,6 +40,6 @@ hilt {
 
 dependencies {
     implementation(project(":favourites:impl-wiring"))
-    implementation(project(":pokemons:impl-wiring"))
+    implementation(project(":features:pokemons:impl-wiring"))
     implementation(project(":settings:impl-wiring"))
 }

@@ -7,8 +7,8 @@ android {
 }
 
 dependencies {
-    api(project(":pokemons:api"))
+    api(project(":features:pokemons:api"))
     implementation(project(":core:network"))
-    implementation(project(":pokemons:impl"))
+    implementation(project(":features:pokemons:impl"))
     implementation(libs.androidx.paging.common)
 }
