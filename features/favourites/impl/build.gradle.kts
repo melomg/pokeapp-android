@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-    implementation(project(":favourites:api"))
+    implementation(project(":features:favourites:api"))
 }

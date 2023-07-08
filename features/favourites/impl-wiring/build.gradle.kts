@@ -7,6 +7,6 @@ android {
 }
 
 dependencies {
-    api(project(":favourites:api"))
-    implementation(project(":favourites:impl"))
+    api(project(":features:favourites:api"))
+    implementation(project(":features:favourites:impl"))
 }
