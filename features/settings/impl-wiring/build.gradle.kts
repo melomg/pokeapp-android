@@ -7,6 +7,6 @@ android {
 }
 
 dependencies {
-    api(project(":settings:api"))
-    implementation(project(":settings:impl"))
+    api(project(":features:settings:api"))
+    implementation(project(":features:settings:impl"))
 }
