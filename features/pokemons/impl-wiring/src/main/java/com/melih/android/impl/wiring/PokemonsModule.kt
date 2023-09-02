@@ -2,7 +2,9 @@ package com.melih.android.impl.wiring
 
 import com.melih.android.pokeapp.core.navigation.NavigationRouter
 import com.melih.android.pokeapp.core.navigation.di.ScreenRouterKey
+import com.melih.android.pokeapp.pokemons.api.router.PokemonsNestedRouter
 import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
+import com.melih.android.pokeapp.pokemons.impl.router.DefaultPokemonsNestedRouter
 import com.melih.android.pokeapp.pokemons.impl.router.DefaultPokemonsRouter
 import dagger.Binds
 import dagger.Module
@@ -20,4 +22,10 @@ internal abstract class PokemonsModule {
     @Binds
     @ScreenRouterKey(PokemonsRouter::class)
     abstract fun bindPokemonsRouter(router: DefaultPokemonsRouter): NavigationRouter
+
+    @ActivityRetainedScoped
+    @IntoMap
+    @Binds
+    @ScreenRouterKey(PokemonsNestedRouter::class)
+    abstract fun bindPokemonsNestedRouter(router: DefaultPokemonsNestedRouter): NavigationRouter
 }

@@ -16,7 +16,7 @@ import com.melih.android.pokeapp.navigation.TopLevelDestination
 import com.melih.android.pokeapp.navigation.TopLevelDestination.FAVOURITES
 import com.melih.android.pokeapp.navigation.TopLevelDestination.POKEMONS
 import com.melih.android.pokeapp.navigation.TopLevelDestination.SETTINGS
-import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
+import com.melih.android.pokeapp.pokemons.api.router.PokemonsNestedRouter
 import com.melih.android.pokeapp.settings.api.router.SettingsRouter
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
@@ -61,16 +61,18 @@ internal class PokeAppState(
         when (topLevelDestination) {
             POKEMONS -> {
                 navController.navigate(
-                    route = routers.find<PokemonsRouter>().routeName,
+                    route = routers.find<PokemonsNestedRouter>().routeName,
                     navOptions = topLevelNavOptions,
                 )
             }
+
             FAVOURITES -> {
                 navController.navigate(
                     route = routers.find<FavouritesRouter>().routeName,
                     navOptions = topLevelNavOptions,
                 )
             }
+
             SETTINGS -> {
                 navController.navigate(
                     route = routers.find<SettingsRouter>().routeName,
