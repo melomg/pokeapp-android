@@ -10,6 +10,7 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:result-ext"))
     implementation(project(":features:pokemons:api"))
+    implementation(project(":features:pokemondetails:api"))
     implementation(libs.bundles.paging)
     implementation(libs.coil.compose)
 
