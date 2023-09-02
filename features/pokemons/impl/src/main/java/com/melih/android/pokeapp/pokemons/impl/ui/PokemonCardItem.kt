@@ -1,6 +1,7 @@
 package com.melih.android.pokeapp.pokemons.impl.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,11 +25,13 @@ import com.melih.android.pokeapp.pokemons.impl.R
 @Composable
 internal fun PokemonCardItem(
     pokemon: Pokemon,
+    onPokemonClicked: (Pokemon) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier
-            .width(dimensionResource(R.dimen.pokemon_image_size)),
+            .width(dimensionResource(R.dimen.pokemon_image_size))
+            .clickable { onPokemonClicked(pokemon) },
     ) {
         AsyncImage(
             model = pokemon.imageUrl,
@@ -62,6 +65,7 @@ private fun PokemonCardItemPreview() {
                 name = "Pikachu",
                 imageUrl = "imageUrl",
             ),
+            onPokemonClicked = {},
         )
     }
 }

@@ -18,4 +18,9 @@ internal class PokemonsViewModel @Inject constructor(
     val paging: Flow<PagingData<Pokemon>> = repository
         .getPokemons()
         .cachedIn(viewModelScope)
+
+    @Suppress("UNUSED_PARAMETER")
+    fun onPokemonClicked(pokemon: Pokemon) {
+        TODO("Open pokemon detail screen")
+    }
 }
