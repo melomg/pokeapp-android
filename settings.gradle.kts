@@ -36,6 +36,7 @@ include(":features:pokemons:impl")
 include(":features:pokemons:impl-wiring")
 
 include(":features:pokemondetails:api")
+include(":features:pokemondetails:impl")
 
 include(":features:settings:api")
 include(":features:settings:impl")
