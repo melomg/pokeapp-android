@@ -8,6 +8,4 @@ android {
 
 dependencies {
     implementation(project(":core:navigation"))
-    implementation(project(":features:pokemons:api"))
-    implementation(libs.androidx.paging.common)
 }
