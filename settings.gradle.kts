@@ -30,9 +30,15 @@ include(":core:result-ext")
 include(":features:favourites:api")
 include(":features:favourites:impl")
 include(":features:favourites:impl-wiring")
+
 include(":features:pokemons:api")
 include(":features:pokemons:impl")
 include(":features:pokemons:impl-wiring")
+
+include(":features:pokemondetails:api")
+include(":features:pokemondetails:impl")
+include(":features:pokemondetails:impl-wiring")
+
 include(":features:settings:api")
 include(":features:settings:impl")
 include(":features:settings:impl-wiring")
