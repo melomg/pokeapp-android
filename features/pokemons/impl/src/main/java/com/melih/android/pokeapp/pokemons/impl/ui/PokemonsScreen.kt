@@ -18,6 +18,6 @@ internal fun PokemonsScreen(
     when (val refreshState = pokemons.loadState.refresh) {
         is LoadState.Error -> PokemonsErrorState(refreshState.error.message)
         is LoadState.Loading -> LoadingRow(modifier.padding(top = 24.dp))
-        is LoadState.NotLoading -> PokemonsSuccessState(pokemons)
+        is LoadState.NotLoading -> PokemonsSuccessState(pokemons, viewModel::onPokemonClicked)
     }
 }

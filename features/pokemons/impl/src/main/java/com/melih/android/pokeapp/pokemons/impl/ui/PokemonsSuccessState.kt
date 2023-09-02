@@ -19,6 +19,7 @@ import com.melih.android.pokeapp.pokemons.impl.R
 @Composable
 fun PokemonsSuccessState(
     pokemons: LazyPagingItems<Pokemon>,
+    onPokemonClicked: (Pokemon) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val appendState = pokemons.loadState.append
@@ -29,12 +30,13 @@ fun PokemonsSuccessState(
         contentPadding = PaddingValues(16.dp),
         columns = GridCells.Adaptive(minSize = dimensionResource(R.dimen.pokemon_image_size)),
         horizontalArrangement = Arrangement.spacedBy(12.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         items(
             count = pokemons.itemCount,
         ) { index ->
             pokemons[index]?.let { pokemon ->
-                PokemonCardItem(pokemon)
+                PokemonCardItem(pokemon, onPokemonClicked)
             }
         }
 
