@@ -7,9 +7,12 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.melih.android.pokeapp.pokemons.api.model.Pokemon
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 internal fun PokemonsScreen(
+    onNavigateToPokemonDetail: (Pokemon) -> Unit, // TODO: Use this with event flow
     modifier: Modifier = Modifier,
     viewModel: PokemonsViewModel = hiltViewModel(),
 ) {
