@@ -37,7 +37,6 @@ interface ComposableRouter : NavigationRouter {
     )
 }
 
-@Suppress("unused")
 interface NestedGraphRouter : NavigationRouter {
 
     fun NavGraphBuilder.navigation(navController: NavHostController, routers: Routers)
