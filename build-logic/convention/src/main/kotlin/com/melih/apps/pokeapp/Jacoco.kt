@@ -86,6 +86,7 @@ internal fun Project.configureJacoco(
                     "**.Companion",
                     "**.*ScreenKt", // fixme remove the rule when ui tests added
                     "**.*Router",  // fixme remove the rule when ui tests added
+                    "**.*Router.Composable.*", // fixme remove the rule when ui tests added
                 )
                 limit {
                     minimum = minimumCoverage
