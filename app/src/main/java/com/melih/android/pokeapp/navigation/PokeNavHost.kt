@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.core.navigation.find
 import com.melih.android.pokeapp.favourites.api.router.FavouritesRouter
-import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
+import com.melih.android.pokeapp.pokemons.api.router.PokemonsNestedRouter
 import com.melih.android.pokeapp.settings.api.router.SettingsRouter
 
 @Composable
@@ -22,8 +22,8 @@ internal fun PokeNavHost(
         startDestination = startDestination,
         modifier = modifier,
     ) {
-        with(routers.find<PokemonsRouter>()) {
-            composable(navController, routers)
+        with(routers.find<PokemonsNestedRouter>()) {
+            navigation(navController, routers)
         }
         with(routers.find<FavouritesRouter>()) {
             composable(navController, routers)

@@ -16,7 +16,7 @@ import com.melih.android.pokeapp.core.navigation.Routers
 import com.melih.android.pokeapp.core.navigation.find
 import com.melih.android.pokeapp.navigation.PokeBottomBar
 import com.melih.android.pokeapp.navigation.PokeNavHost
-import com.melih.android.pokeapp.pokemons.api.router.PokemonsRouter
+import com.melih.android.pokeapp.pokemons.api.router.PokemonsNestedRouter
 
 @OptIn(
     ExperimentalLayoutApi::class,
@@ -47,7 +47,7 @@ internal fun MainScreen(
             PokeNavHost(
                 navController = appState.navController,
                 routers = routers,
-                startDestination = routers.find<PokemonsRouter>().routeName,
+                startDestination = routers.find<PokemonsNestedRouter>().routeName,
                 modifier = Modifier
                     .padding(padding)
                     .consumedWindowInsets(padding),

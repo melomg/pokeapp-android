@@ -6,8 +6,12 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.melih.android.pokeapp.pokemons.api.data.PokemonsRepository
 import com.melih.android.pokeapp.pokemons.api.model.Pokemon
+import com.melih.android.pokeapp.pokemons.impl.ui.PokemonsEvent.Companion.NoEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,8 +23,16 @@ internal class PokemonsViewModel @Inject constructor(
         .getPokemons()
         .cachedIn(viewModelScope)
 
-    @Suppress("UNUSED_PARAMETER")
+    val event: StateFlow<PokemonsEvent>
+        get() = _event
+
+    private val _event = MutableStateFlow(NoEvent)
+
     fun onPokemonClicked(pokemon: Pokemon) {
-        TODO("Open pokemon detail screen")
+        _event.update { it.copy(navigateToPokemonDetail = NavigateToPokemonDetail(pokemon)) }
+    }
+
+    fun eventHandled() {
+        _event.update { it.copy(navigateToPokemonDetail = null) }
     }
 }
