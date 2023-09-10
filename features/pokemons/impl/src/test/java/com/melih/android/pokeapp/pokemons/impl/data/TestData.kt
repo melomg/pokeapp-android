@@ -1,12 +1,7 @@
 package com.melih.android.pokeapp.pokemons.impl.data
 
-import androidx.paging.PagingData
 import androidx.paging.PagingSource
-import androidx.paging.testing.SnapshotLoader
-import androidx.paging.testing.asSnapshot
 import com.melih.android.pokeapp.pokemons.api.model.Pokemon
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.Flow
 import nl.wykorijnsburger.kminrandom.minRandomCached
 
 val allPokemons = (1..36).map {
@@ -45,8 +40,3 @@ val loadResults = listOf(
         itemsAfter = 0,
     ),
 )
-
-suspend fun Flow<PagingData<Pokemon>>.testPaging(
-    coroutineScope: CoroutineScope,
-    loadOperations: suspend SnapshotLoader<Pokemon>.() -> @JvmSuppressWildcards Unit = {},
-): List<Pokemon> = asSnapshot(coroutineScope, loadOperations = loadOperations)
