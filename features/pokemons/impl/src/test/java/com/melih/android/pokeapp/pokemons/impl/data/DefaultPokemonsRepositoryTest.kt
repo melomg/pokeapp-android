@@ -3,6 +3,7 @@ package com.melih.android.pokeapp.pokemons.impl.data
 import androidx.paging.LoadState
 import androidx.paging.LoadStates
 import androidx.paging.PagingData
+import androidx.paging.testing.asSnapshot
 import com.melih.android.pokeapp.core.coroutines.test.TestDispatcherExtension
 import com.melih.android.pokeapp.pokemons.impl.data.datasource.PokemonsPagerFactory
 import io.mockk.every
@@ -46,7 +47,7 @@ internal class DefaultPokemonsRepositoryTest {
                 ),
             )
 
-            val items = repository.getPokemons().testPaging(this)
+            val items = repository.getPokemons().asSnapshot()
 
             assertEquals(
                 expected = items,
@@ -72,7 +73,7 @@ internal class DefaultPokemonsRepositoryTest {
                 )
 
                 assertThrows<IOException> {
-                    repository.getPokemons().testPaging(this)
+                    repository.getPokemons().asSnapshot()
                 }
             }
         }
